@@ -10,9 +10,7 @@ public class Rectangle extends Forme {
         this.y = y;
     }
 
-    @Override
-    public void draw(char[][] matrice) {
-        super.draw(matrice);
+    public void dessiner(char[][] matrice) {
         System.out.println("im a rectangle");
     }
 }

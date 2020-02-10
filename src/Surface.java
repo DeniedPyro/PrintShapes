@@ -21,15 +21,13 @@ public class Surface {
 
     public void ajouter (Forme enforme){
 
-        enforme.draw(this.canevas);
+        enforme.dessiner(this.canevas);
     }
 
     public void brasser(){
-        return;
     }
 
     public void renverser(){
-        return;
     }
 
 }
