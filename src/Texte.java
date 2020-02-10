@@ -1,5 +1,5 @@
 public class Texte  extends Forme{
-    Lettre liste_lettre [];
+    Lettre [] liste_lettre ;
 
     public Texte(char [][] caracteres ,int x , int y){
         this.liste_lettre = new Lettre [caracteres.length];
@@ -8,8 +8,7 @@ public class Texte  extends Forme{
 
     }
 
-    @Override
-    public void draw(char[][] matrice) {
-        super.draw(matrice);
+    public void dessiner(char[][] matrice) {
+
     }
 }
