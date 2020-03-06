@@ -17,11 +17,6 @@ public class Surface {
             }
         }
     }
-    public void dessin(){
-        for (int i = 0; i < listeForme.size(); i++) {
-            listeForme.get(i).dessiner(this);
-        }
-    }
     public void resetCanevas(){
         for(int i = 0; i < this.ligne; i++) {
             for(int j = 0; j < this.colonne; j++) {
@@ -29,6 +24,13 @@ public class Surface {
             }
         }
     }
+
+    public void dessiner(){
+        for (int i = 0; i < listeForme.size(); i++) {
+            listeForme.get(i).dessiner(this);
+        }
+    }
+
 
     public void setCanevasPoint(char car, int i ,int j) {
         this.canevas[i][j] = car;
@@ -62,10 +64,17 @@ public class Surface {
     }
 
     public void renverser(){
-
+        for(int col = 0; col < this.colonne; col++){
+            for( int lin = 0; lin < this.ligne/2; col++){
+                char tempCar =this.canevas[col][ligne] ;
+                this.canevas[lin][col] = this.canevas[this.ligne-1-lin][col];
+                this.canevas[this.ligne-1-lin][col] = tempCar;
+            }
+        }
     }
+
     public void afficherCanevas(){
-        for (int i = 0; i < canevas.length; i++) {
+        for(int i = 0; i < canevas.length; i++) {
             String resultat = "";
             for (int j = 0; j < canevas[i].length; j++) {
                 resultat += this.canevas[i][j];
