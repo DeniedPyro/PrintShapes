@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import static java.util.Math.all;
+import static java.lang.Math.random;
 public class Surface {
     int ligne;
     int colonne;
@@ -24,8 +24,8 @@ public class Surface {
         }
     }
     public void resetCanevas(){
-        for(i = 0; i < this.ligne; i++) {
-            for(j = 0; j < this.colonne; j++) {
+        for(int i = 0; i < this.ligne; i++) {
+            for(int j = 0; j < this.colonne; j++) {
                 this.canevas[i][j] = ' ';
             }
         }
@@ -44,15 +44,16 @@ public class Surface {
     }
 
     public void brasser(){
-        for(i = 0; i < listeForme.size(); i++) {
+        for(int i = 0; i < listeForme.size(); i++) {
             Forme forme = listeForme.get(i);
             int randX = (int)(Math.random()*3 - 1);
             int randY = (int)(Math.random()*3 - 1);                
             if (forme instanceof Ligne){
-                forme.setX(forme.getX() + randX);
-                forme.setX2(forme.getX2() + randX);
-                forme.setY(forme.getY() + randY);
-                forme.setY2(forme.getY2() + randY);
+                Ligne formeL = (Ligne) forme;
+                formeL.setX(formeL.getX() + randX);
+                formeL.setX2(formeL.getX2() + randX);
+                formeL.setY(formeL.getY() + randY);
+                formeL.setY2(formeL.getY2() + randY);
             }
             else {
                 forme.setX(forme.getX() + randX);

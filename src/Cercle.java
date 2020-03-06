@@ -18,7 +18,7 @@ public class Cercle extends Forme {
     public void dessiner(Surface sur) {
         int x = 0;
         int y = this.rayon;
-        int m = 5 - (4 * this.rayon);
+        int m = 5 - 4 * this.rayon;
 
         while (x <= y){
             ajouterPixel(sur,x+this.x, y+this.y );

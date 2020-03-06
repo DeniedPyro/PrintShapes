@@ -5,7 +5,7 @@ abstract class Forme {
 
     public abstract void dessiner(Surface sur);
 
-    public  void setCaractere(char car){
+    public void setCaractere(char car){
         this.caractere = car;
     }
     public void setX(int x){
