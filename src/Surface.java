@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import static java.lang.Math.random;
 public class Surface {
-    int ligne;
-    int colonne;
-    ArrayList<Forme> listeForme;
-    char [][] canevas ;
-
+    private int ligne;
+    private int colonne;
+    private ArrayList<Forme> listeForme;
+    private char [][] canevas ;
 
     public Surface(int ligne, int colonne){
         this.ligne = ligne;
