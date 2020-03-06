@@ -11,7 +11,7 @@ public class Rectangle extends Forme {
     }
 
     public void dessiner(Surface sur) {
-        
+
         for (int col = this.x ; col < this.largeur + this.x ; col++){
 
             if (col >=0 && col < sur.colonne){
