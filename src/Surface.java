@@ -19,11 +19,11 @@ public class Surface {
     }
 
     public int getColonne() {
-        return colonne;
+        return this.colonne;
     }
 
     public int getLigne() {
-        return ligne;
+        return this.ligne;
     }
 
     public void resetCanevas(){
