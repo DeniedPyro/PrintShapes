@@ -40,8 +40,8 @@ public class Ligne extends Forme {
         }
         else {
             for(int i = x; i < x2; i++){
-            sur.setCanevasPoint(caractere,i,i);
-        }
+                sur.setCanevasPoint(caractere,i,i);
+            }
         }
     }
 }

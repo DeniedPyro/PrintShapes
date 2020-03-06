@@ -12,13 +12,24 @@ public class Surface {
         this.colonne = colonne;
         this.canevas = new char[ligne][colonne];
         this.listeForme = new ArrayList<Forme>();
-        for (int i = 0; i < canevas.length; i++) {
-            for (int j = 0; j < canevas[i].length; j++) {
+        for (int i = 0; i < this.ligne; i++) {
+            for (int j = 0; j < this.colonne; j++) {
                 this.canevas[i][j] = ' ';
             }
         }
     }
-
+    public void dessin(){
+        for (int i = 0; i < listeForme.size(); i++) {
+            listeForme.get(i).dessiner(this);
+        }
+    }
+    public void resetCanevas(){
+        for(i = 0; i < this.ligne; i++) {
+            for(j = 0; j < this.colonne; j++) {
+                this.canevas[i][j] = ' ';
+            }
+        }
+    }
 
     public void setCanevasPoint(char car, int i ,int j) {
         this.canevas[i][j] = car;
@@ -51,6 +62,7 @@ public class Surface {
     }
 
     public void renverser(){
+
     }
     public void afficherCanevas(){
         for (int i = 0; i < canevas.length; i++) {
