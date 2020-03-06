@@ -10,7 +10,7 @@ public class Lettre extends Forme{
         this.y = y;
     }
 
-    public void dessiner(char[][] matrice) {
+    public void dessiner(Surface sur) {
         System.out.println("im the letter " + this.lettre);
     }
 }

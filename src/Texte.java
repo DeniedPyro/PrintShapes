@@ -8,7 +8,7 @@ public class Texte  extends Forme{
 
     }
 
-    public void dessiner(char[][] matrice) {
+    public void dessiner(Surface sur) {
 
     }
 }

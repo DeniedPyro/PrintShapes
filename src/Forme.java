@@ -3,7 +3,7 @@ abstract class Forme {
     int y ;
     char caractere; // # par default
 
-    public abstract void dessiner(char[][] matrice);
+    public abstract void dessiner(Surface sur);
 
     public  void setCaractere(char car){
         this.caractere = car;

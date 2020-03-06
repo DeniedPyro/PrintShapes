@@ -19,9 +19,19 @@ public class Surface {
         }
     }
 
+
+    public void setCanevasPoint(char car, int i ,int j) {
+        this.canevas[i][j] = car;
+    }
+
+    public char[][] getCanevas(){
+
+        return this.canevas;
+    }
+
     public void ajouter (Forme enforme){
 
-        enforme.dessiner(this.canevas);
+        enforme.dessiner(this);
     }
 
     public void brasser(){

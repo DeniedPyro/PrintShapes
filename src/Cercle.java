@@ -10,7 +10,7 @@ public class Cercle extends Forme {
 
     }
 
-    public void dessiner(char[][] matrice) {
+    public void dessiner(Surface sur) {
         System.out.println("im a circle");
     }
 }
