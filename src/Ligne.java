@@ -52,6 +52,18 @@ public class Ligne extends Forme {
                 sur.setCanevasPoint(caractere,j,i);
             }
         }
+        if(deltaY==deltaX){
+            if(deltaX < 0){
+                for(int i = x; i >= x2; i--){
+                    sur.setCanevasPoint(caractere,i,i);
+                }
+            }
+            else {
+                for(int i = this.x; i <= this.x2 ; i++) {
+                    sur.setCanevasPoint(caractere,i,i);
+                }    
+            }            
+        }
         
     }
 }
