@@ -37,10 +37,10 @@ public class Ligne extends Forme {
         }
         else if (deltaX < deltaY) {
             for(int j = this.y; j <= this.y2 ; j++) {
+                double calcul = Math.round((deltaX/deltaY)*(j - this.y) + this.x);
                 System.out.println(calcul);
-                double calcul = Math.round((deltaX/deltaY)*(i - this.y) + this.x);
-                System.out.println(i);
                 int i = (int)(calcul);
+                System.out.println(i);
                 sur.setCanevasPoint(caractere,i,j);
             }
         }
