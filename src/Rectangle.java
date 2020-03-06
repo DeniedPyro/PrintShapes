@@ -11,7 +11,6 @@ public class Rectangle extends Forme {
     }
 
     public void dessiner(Surface sur) {
-        
         for (int col = this.x ; col < this.largeur + this.x ; col++){
                 sur.setCanevasPoint(this.caractere,this.y, col);
                 sur.setCanevasPoint(this.caractere,(this.hauteur-1)+this.y,col);
