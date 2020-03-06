@@ -9,6 +9,18 @@ public class Ligne extends Forme {
         this.y2 = y2;
         this.caractere = caractere;
     }
+    public void setX2(int x2){
+        this.x2 = x2;
+    }
+    public void setY2(int y2){
+        this.y2 = y2;
+    }
+    public int getX2(){
+        return this.x2;
+    }
+    public int getY2(){
+        return this.y2;
+    }
     public void dessiner(Surface sur) {
         int deltaX =(x2 - x);
         int deltaY =(y2 - y);

@@ -1,7 +1,7 @@
 abstract class Forme {
     int x;
-    int y ;
-    char caractere; // # par default
+    int y;
+    char caractere = ' '; // ' ' par default
 
     public abstract void dessiner(Surface sur);
 

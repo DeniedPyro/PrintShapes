@@ -1,8 +1,9 @@
-
+import java.util.ArrayList;
+import static java.util.Math.all;
 public class Surface {
     int ligne;
     int colonne;
-    Forme [] listeForme ;
+    ArrayList<Forme> listeForme;
     char [][] canevas ;
 
 
@@ -10,11 +11,10 @@ public class Surface {
         this.ligne = ligne;
         this.colonne = colonne;
         this.canevas = new char[ligne][colonne];
-        this.listeForme = new Forme[0];
+        this.listeForme = new ArrayList<Forme>();
         for (int i = 0; i < canevas.length; i++) {
             for (int j = 0; j < canevas[i].length; j++) {
                 this.canevas[i][j] = ' ';
-
             }
         }
     }
@@ -25,16 +25,29 @@ public class Surface {
     }
 
     public char[][] getCanevas(){
-
         return this.canevas;
     }
 
     public void ajouter (Forme enforme){
-
-        enforme.dessiner(this);
+        listeForme.add(enforme);
     }
 
     public void brasser(){
+        for(i = 0; i < listeForme.size(); i++) {
+            Forme forme = listeForme.get(i);
+            int randX = (int)(Math.random()*3 - 1);
+            int randY = (int)(Math.random()*3 - 1);                
+            if (forme instanceof Ligne){
+                forme.setX(forme.getX() + randX);
+                forme.setX2(forme.getX2() + randX);
+                forme.setY(forme.getY() + randY);
+                forme.setY2(forme.getY2() + randY);
+            }
+            else {
+                forme.setX(forme.getX() + randX);
+                forme.setY(forme.getY() + randY);
+            }
+        }
     }
 
     public void renverser(){
