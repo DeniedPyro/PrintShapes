@@ -39,5 +39,13 @@ public class Surface {
 
     public void renverser(){
     }
-
+    public void afficherCanevas(){
+        for (int i = 0; i < canevas.length; i++) {
+            String resultat = "";
+            for (int j = 0; j < canevas[i].length; j++) {
+                resultat += this.canevas[i][j];
+            }
+            System.out.println(resultat);
+        }
+    }
 }
