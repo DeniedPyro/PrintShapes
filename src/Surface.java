@@ -42,7 +42,9 @@ public class Surface {
 
 
     public void setCanevasPoint(char car, int i ,int j) {
-        this.canevas[i][j] = car;
+        if (j>=0 && j < this.getColonne() && i >=0 && i < this.getLigne()){
+            this.canevas[i][j] = car;
+        }
     }
 
     public char[][] getCanevas(){
