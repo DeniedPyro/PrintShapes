@@ -38,10 +38,20 @@ public class Ligne extends Forme {
                 sur.setCanevasPoint(caractere,i,j);
             }
         }
-        else {
-            for(int i = this.x; i <= this.x2; i++){
-                sur.setCanevasPoint(caractere,i,i);
+        if(deltaX<0) {
+            for(int i = this.x; i >= this.x2 ; i--) {
+                double calcul = ((double)deltaY/deltaX)*(i - this.x) + this.y;
+                int j = (int) Math.round(calcul);
+                sur.setCanevasPoint(caractere,i,j);
             }
         }
+        if(deltaY<0) {
+            for(int j = this.y; j >= this.y2 ; j--) {
+                double calcul = ((double)deltaX/deltaY)*(j - this.y) + this.x;
+                int i = (int)(calcul);
+                sur.setCanevasPoint(caractere,i,j);
+            }
+        }
+        
     }
 }
