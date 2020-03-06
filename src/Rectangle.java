@@ -12,14 +12,14 @@ public class Rectangle extends Forme {
 
     public void dessiner(Surface sur) {
         for (int col = this.x ; col < this.largeur + this.x ; col++){
-            if (col >=0 && col < sur.colonne){
+            if (col >=0 && col < sur.getColonne()){
                 sur.setCanevasPoint(this.caractere,col,this.y);
                 sur.setCanevasPoint(this.caractere,col ,(this.hauteur-1)+this.y);
             }
         }
 
         for (int lin = this.y ; lin < this.hauteur + this.y ; lin++){
-            if (lin >=0 && lin < sur.ligne){
+            if (lin >=0 && lin < sur.getLigne()){
                 sur.setCanevasPoint(this.caractere,this.x,lin);
                 sur.setCanevasPoint(this.caractere,(this.largeur-1) + this.x , lin);
             }

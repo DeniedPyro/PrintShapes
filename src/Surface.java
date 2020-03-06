@@ -17,6 +17,15 @@ public class Surface {
             }
         }
     }
+
+    public int getColonne() {
+        return colonne;
+    }
+
+    public int getLigne() {
+        return ligne;
+    }
+
     public void resetCanevas(){
         for(int i = 0; i < this.ligne; i++) {
             for(int j = 0; j < this.colonne; j++) {

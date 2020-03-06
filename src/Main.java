@@ -10,6 +10,9 @@ public class Main {
         windows.ajouter(r);
         windows.ajouter(c);
 
+        windows.dessiner();
+        windows.afficherCanevas();
+
     }
 
 

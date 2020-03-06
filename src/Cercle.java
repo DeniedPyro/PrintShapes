@@ -10,7 +10,7 @@ public class Cercle extends Forme {
     }
 
     public void ajouterPixel(Surface sur , int x , int y){
-        if(x >=0 && x < sur.colonne && y >= 0 && y < sur.ligne){
+        if(x >=0 && x < sur.getColonne() && y >= 0 && y < sur.getLigne()){
             sur.setCanevasPoint(this.caractere,y,x);
         }
     }
