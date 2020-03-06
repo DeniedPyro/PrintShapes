@@ -22,24 +22,24 @@ public class Ligne extends Forme {
         return this.y2;
     }
     public void dessiner(Surface sur) {
-        int deltaX =(x2 - x);
-        int deltaY =(y2 - y);
+        int deltaX =(this.x2 - this.x);
+        int deltaY =(this.y2 - this.y);
         if (deltaX > deltaY) {
-            for(int i = x; i < x2 ; i++) {
-                double calcul = Math.round((deltaY/deltaX)*(i - x) + y);
+            for(int i = this.x; i < this.x2 ; i++) {
+                double calcul = Math.round((deltaY/deltaX)*(i - this.x) + this.y);
                 int j = (int) calcul;
                 sur.setCanevasPoint(caractere,i,j);
             }
         }
         else if (deltaX < deltaY) {
-            for(int i = y; i < y2 ; i++) {
-                double calcul = Math.round((deltaX/deltaY)*(i - y) + x);
+            for(int i = this.y; i < this.y2 ; i++) {
+                double calcul = Math.round((deltaX/deltaY)*(i - this.y) + this.x);
                 int j = (int)(calcul);
                 sur.setCanevasPoint(caractere,j,i);
             }
         }
         else {
-            for(int i = x; i < x2; i++){
+            for(int i = this.x; i < this.x2; i++){
                 sur.setCanevasPoint(caractere,i,i);
             }
         }
