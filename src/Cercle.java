@@ -7,15 +7,12 @@ public class Cercle extends Forme {
         this.caractere = caractere;
         this.x = x;
         this.y = y;
-
     }
 
     public void ajouterPixel(Surface sur , int x , int y){
         if(x >=0 && x < sur.colonne && y >= 0 && y < sur.ligne){
             sur.setCanevasPoint(this.caractere,y,x);
         }
-
-
     }
 
     public void dessiner(Surface sur) {
