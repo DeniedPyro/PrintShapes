@@ -23,23 +23,29 @@ public class Ligne extends Forme {
     }
     public void dessiner(Surface sur) {
         int deltaX =(this.x2 - this.x);
+        System.out.println(deltaX);
         int deltaY =(this.y2 - this.y);
+        System.out.println(deltaY);
         if (deltaX > deltaY) {
-            for(int i = this.x; i < this.x2 ; i++) {
+            for(int i = this.x; i <= this.x2 ; i++) {
                 double calcul = Math.round((deltaY/deltaX)*(i - this.x) + this.y);
+                System.out.println(calcul);
                 int j = (int) calcul;
+                System.out.println(j);
                 sur.setCanevasPoint(caractere,i,j);
             }
         }
         else if (deltaX < deltaY) {
-            for(int i = this.y; i < this.y2 ; i++) {
+            for(int j = this.y; j <= this.y2 ; j++) {
+                System.out.println(calcul);
                 double calcul = Math.round((deltaX/deltaY)*(i - this.y) + this.x);
-                int j = (int)(calcul);
-                sur.setCanevasPoint(caractere,j,i);
+                System.out.println(i);
+                int i = (int)(calcul);
+                sur.setCanevasPoint(caractere,i,j);
             }
         }
         else {
-            for(int i = this.x; i < this.x2; i++){
+            for(int i = this.x; i <= this.x2; i++){
                 sur.setCanevasPoint(caractere,i,i);
             }
         }
