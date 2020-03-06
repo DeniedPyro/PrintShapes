@@ -28,28 +28,28 @@ public class Ligne extends Forme {
             for(int i = this.x; i <= this.x2 ; i++) {
                 double calcul = ((double)deltaY/deltaX)*(i - this.x) + this.y;
                 int j = (int) Math.round(calcul);
-                sur.setCanevasPoint(caractere,i,j);
+                sur.setCanevasPoint(caractere,j,i);
             }
         }
         else if (deltaX < deltaY) {
             for(int j = this.y; j <= this.y2 ; j++) {
                 double calcul = ((double)deltaX/deltaY)*(j - this.y) + this.x;
-                int i = (int)(calcul);
-                sur.setCanevasPoint(caractere,i,j);
+                int i = (int)Math.round(calcul);
+                sur.setCanevasPoint(caractere,j,i);
             }
         }
         if(deltaX<0) {
             for(int i = this.x; i >= this.x2 ; i--) {
                 double calcul = ((double)deltaY/deltaX)*(i - this.x) + this.y;
                 int j = (int) Math.round(calcul);
-                sur.setCanevasPoint(caractere,i,j);
+                sur.setCanevasPoint(caractere,j,i);
             }
         }
         if(deltaY<0) {
             for(int j = this.y; j >= this.y2 ; j--) {
                 double calcul = ((double)deltaX/deltaY)*(j - this.y) + this.x;
-                int i = (int)(calcul);
-                sur.setCanevasPoint(caractere,i,j);
+                int i = (int)Math.round(calcul);
+                sur.setCanevasPoint(caractere,j,i);
             }
         }
         
