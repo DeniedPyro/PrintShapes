@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class Texte extends Forme{
     private ArrayList<Lettre> tabLettres;
 
-    public Texte(String chaine , int x , int y, char caractere){
+    public Texte(char caractere, int x, int y, String chaine){
         this.caractere = caractere;
         this.x = x;
         this.y = y;
@@ -31,10 +31,10 @@ public class Texte extends Forme{
         }
     }
 
-    public void renverser(Surface surface) {
+    public void renverser(Surface sur) {
         for(int i = 0; i < this.tabLettres.size(); i++) {
             Lettre l = this.tabLettres.get(i);
-            l.renverser(surface);
+            l.renverser(sur);
         }
     }
 }

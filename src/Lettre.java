@@ -1,7 +1,7 @@
 public class Lettre extends Forme{
     private char lettre;
     private byte[] carImage;
-    public Lettre (char lettre,int x, int y, char caractere){
+    public Lettre (char caractere, int x, int y, char lettre){
         this.caractere = caractere;
         this.lettre = lettre;
         this.x = x;
@@ -15,7 +15,7 @@ public class Lettre extends Forme{
             byte encodage = table[j];
             for(int i = this.x + 7; i >= this.x; i--) {
                 if ((encodage & 1) == 1) {
-                    sur.setCanevasPoint(this.caractere, yActuel, i);
+                    sur.setPixel(this.caractere, yActuel, i);
                 }
                 encodage >>= 1;
             }

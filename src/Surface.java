@@ -48,7 +48,7 @@ public class Surface {
     }
 
 
-    public void setCanevasPoint(char car, int i ,int j) {
+    public void setPixel(char car, int i ,int j) {
         if (j>=0 && j < this.getColonne() && i >=0 && i < this.getLigne()){
             this.canevas[i][j] = car;
         }

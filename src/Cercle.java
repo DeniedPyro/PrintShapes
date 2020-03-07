@@ -2,7 +2,7 @@ public class Cercle extends Forme {
 
     int rayon;
 
-    public Cercle(int rayon,char caractere,int x , int y){
+    public Cercle(char caractere, int x , int y , int rayon){
         this.rayon = rayon;
         this.caractere = caractere;
         this.x = x;
@@ -11,7 +11,7 @@ public class Cercle extends Forme {
 
     public void ajouterPixel(Surface sur , int x , int y){
         if(x >=0 && x < sur.getColonne() && y >= 0 && y < sur.getLigne()){
-            sur.setCanevasPoint(this.caractere,y,x);
+            sur.setPixel(this.caractere,y,x);
         }
     }
 

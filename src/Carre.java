@@ -1,7 +1,7 @@
 public class Carre extends Rectangle {
 
-    public Carre(int cote, char caractere, int x, int y) {
-        super(cote, cote , caractere, x, y);
+    public Carre(char caractere, int x, int y, int cote) {
+        super(caractere, x, y, cote, cote);
     }
 
 }
