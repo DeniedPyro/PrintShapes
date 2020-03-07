@@ -33,6 +33,9 @@ public class Texte extends Forme{
 
     @Override
     public void renverser(Surface surface) {
-
+        for(int i = 0; i < this.tabLettres.size(); i++) {
+            Lettre l = this.tabLettres.get(i);
+            l.renverser(surface);
+        }
     }
 }

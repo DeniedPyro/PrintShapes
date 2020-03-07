@@ -88,43 +88,7 @@ public class Surface {
         }
     }
 
-    /* public void renverser(){
-        for(int col = 0; col < this.colonne; col++){
-            for(int lin = 0; lin < this.ligne/2; lin++){
-                char tempCar = this.canevas[lin][col];
-                this.canevas[lin][col] = this.canevas[this.ligne-1-lin][col];
-                this.canevas[this.ligne-1-lin][col] = tempCar;
-            }
-        }
-    } */
 
-//    public void renverser(){
-//        for(int i = 0; i < listeForme.size(); i++) {
-//            Forme forme = listeForme.get(i);
-//            if (forme instanceof Ligne){
-//                Ligne formeL = (Ligne) forme;
-//                if (formeL.getX() > this.ligne/2) {
-//                    formeL.setX(formeL.getX());
-//                }
-//                else {
-//                    formeL.setX(formeL.getX());
-//                }
-//                if (formeL.getX2() > this.ligne/2) {
-//                    formeL.setX2(formeL.getX2());
-//                }
-//                else {
-//                    formeL.setX2(formeL.getX2());
-//                }
-//            }
-//            else if (forme instanceof Texte){
-//                Texte formeT = (Texte) forme;
-//                formeT.coorSet( , );
-//            }
-//            else {
-//                forme.setX(forme.getX());
-//            }
-//        }
-//    }
 
     public void afficherCanevas(){
         for(int i = 0; i < canevas.length; i++) {

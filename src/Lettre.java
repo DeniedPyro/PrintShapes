@@ -8,7 +8,6 @@ public class Lettre extends Forme{
         this.y = y;
         this.carImage = Police8x12.getImage(lettre);
     }
-
     public void dessiner(Surface sur) {
         byte[] table =this.carImage;
         for(int j = 0; j < 12; j++) {
