@@ -22,11 +22,13 @@ public class Lettre extends Forme{
         }
     }
 
-    public void renverser(Surface surface) {
+    public void renverser(Surface sur) {
         for(int i = 0; i < this.carImage.length/2; i++){
             byte tempCar = this.carImage[i];
             this.carImage[i] = this.carImage[this.carImage.length-1-i];
             this.carImage[this.carImage.length-1-i] = tempCar;
         }
+
+        this.y = sur.getLigne()-this.y-12;
     }
 }
