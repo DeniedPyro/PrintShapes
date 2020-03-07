@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Surface windows = new Surface(13 ,64);
+        Surface windows = new Surface(12 ,64);
         Ligne l = new Ligne(1,1,7,5,'#');
         Rectangle r = new Rectangle(12,64,'.',0,0);
         Texte texte = new Texte("AAAAAAAAA", 0, 0, '#');
