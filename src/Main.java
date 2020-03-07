@@ -1,9 +1,10 @@
-
 public class Main {
     public static void main(String[] args) {
-        Surface windows = new Surface(10 ,10);
+        Surface windows = new Surface(12 ,64);
         Ligne l = new Ligne(1,1,7,5,'#');
-        Rectangle r = new Rectangle(31,31,'.',0,0);
+        Rectangle r = new Rectangle(12,64,'.',0,0);
+        Texte texte = new Texte("AAAAAAAAA", 0, 0, '#');
+        // Lettre k = new Lettre('B', 0, 0,'#');
         //Cercle c = new Cercle(3,'%',4,4);
         // Ligne l1 = new Ligne(15,15,30,20,'1');
         // Ligne l2 = new Ligne(15,15,30,10,'2');
@@ -16,8 +17,8 @@ public class Main {
         // Ligne l9  = new Ligne(0,15,30,15,'h');
         // Ligne l10 = new Ligne(15,0,15,30,'v');
         
-        // windows.ajouter(r);
-        windows.ajouter(l);
+        windows.ajouter(r);
+        windows.ajouter(texte);
 
         // windows.ajouter(l1);
         // windows.ajouter(l2);
@@ -29,9 +30,7 @@ public class Main {
         // windows.ajouter(l8);
         // windows.ajouter(l9);
         // windows.ajouter(l10);
-
         // windows.ajouter(c);
-
         windows.dessiner();
         windows.afficherCanevas();
     }
