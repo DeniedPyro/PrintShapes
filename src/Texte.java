@@ -6,27 +6,27 @@ public class Texte extends Forme{
         this.caractere = caractere;
         this.x = x;
         this.y = y;
-        tabLettres = new ArrayList<Lettre>();
+        this.tabLettres = new ArrayList<Lettre>();
         for(int i = 0; i < chaine.length(); i++){
             Lettre lettre = new Lettre(chaine.charAt(i), 8*i + x, y, caractere);
-            tabLettres.add(lettre);
+            this.tabLettres.add(lettre);
         }        
     }
     public void coorSet(int x, int y){
-        for(int i = 0; i < tabLettres.size(); i++) {
-            Lettre l = tabLettres.get(i);
+        for(int i = 0; i < this.tabLettres.size(); i++) {
+            Lettre l = this.tabLettres.get(i);
             l.setX(l.getX() + x);
             l.setY(l.getY() + y);
         }
     }
 
     public int getSize(){
-        return tabLettres.size();
+        return this.tabLettres.size();
     }
 
     public void dessiner(Surface sur) {
-        for (int i = 0; i < tabLettres.size(); i++){
-            Lettre lettreAct = tabLettres.get(i);
+        for (int i = 0; i < this.tabLettres.size(); i++){
+            Lettre lettreAct = this.tabLettres.get(i);
             lettreAct.dessiner(sur);
         }
     }
