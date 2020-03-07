@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Surface windows = new Surface(12 ,64);
+        Surface windows = new Surface(13 ,64);
         Ligne l = new Ligne(1,1,7,5,'#');
         Rectangle r = new Rectangle(12,64,'.',0,0);
         Texte texte = new Texte("AAAAAAAAA", 0, 0, '#');
@@ -17,7 +17,6 @@ public class Main {
         // Ligne l9  = new Ligne(0,15,30,15,'h');
         // Ligne l10 = new Ligne(15,0,15,30,'v');
         
-        windows.ajouter(r);
         windows.ajouter(texte);
 
         // windows.ajouter(l1);
@@ -31,6 +30,7 @@ public class Main {
         // windows.ajouter(l9);
         // windows.ajouter(l10);
         // windows.ajouter(c);
+        windows.renverser();
         windows.dessiner();
         windows.afficherCanevas();
     }

@@ -1,7 +1,5 @@
 public class Lettre extends Forme{
-    char lettre;
-    int x;
-    int y;
+    private char lettre;
     public Lettre (char lettre,int x, int y, char caractere){
         this.caractere = caractere;
         this.lettre = lettre;

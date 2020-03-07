@@ -70,6 +70,10 @@ public class Surface {
                 formeL.setY(formeL.getY() + randY);
                 formeL.setY2(formeL.getY2() + randY);
             }
+            else if (forme instanceof Texte){
+                Texte formeT = (Texte) forme;
+                formeT.coorSet(randX, randY);                                   
+            }
             else {
                 forme.setX(forme.getX() + randX);
                 forme.setY(forme.getY() + randY);
@@ -79,8 +83,8 @@ public class Surface {
 
     public void renverser(){
         for(int col = 0; col < this.colonne; col++){
-            for( int lin = 0; lin < this.ligne/2; col++){
-                char tempCar =this.canevas[col][ligne] ;
+            for(int lin = 0; lin < this.ligne/2; col++){
+                char tempCar = this.canevas[lin][col];
                 this.canevas[lin][col] = this.canevas[this.ligne-1-lin][col];
                 this.canevas[this.ligne-1-lin][col] = tempCar;
             }

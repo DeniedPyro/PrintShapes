@@ -16,6 +16,5 @@ public class Rectangle extends Forme {
                 sur.setCanevasPoint(this.caractere,lin,col);
             }
         }
-
     }
 }
