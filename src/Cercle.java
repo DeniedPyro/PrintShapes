@@ -38,7 +38,6 @@ public class Cercle extends Forme {
         }
     }
 
-    @Override
     public void renverser(Surface sur){
         this.y = sur.getLigne()-(this.rayon/2)-this.y;
     }
