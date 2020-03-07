@@ -37,4 +37,9 @@ public class Cercle extends Forme {
             m = m + 8*x + 4 ;
         }
     }
+
+    @Override
+    public void renverser(Surface sur){
+        this.y = sur.getLigne()-(this.rayon/2)-this.y;
+    }
 }

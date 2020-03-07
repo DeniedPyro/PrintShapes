@@ -20,4 +20,6 @@ abstract class Forme {
     public int getY(){
         return this.y;
     }
+
+    public abstract void renverser(Surface surface);
 }

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
+
 public class Surface {
     private int ligne;
     private int colonne;
@@ -37,6 +38,12 @@ public class Surface {
     public void dessiner(){
         for (int i = 0; i < listeForme.size(); i++) {
             listeForme.get(i).dessiner(this);
+        }
+    }
+
+    public void renverser(){
+        for (int i = 0; i < listeForme.size(); i++) {
+            listeForme.get(i).renverser(this);
         }
     }
 
@@ -91,33 +98,33 @@ public class Surface {
         }
     } */
 
-    public void renverser(){
-        for(int i = 0; i < listeForme.size(); i++) {
-            Forme forme = listeForme.get(i);
-            if (forme instanceof Ligne){
-                Ligne formeL = (Ligne) forme;
-                if (formeL.getX() > this.ligne/2) {
-                    formeL.setX(formeL.getX());
-                }
-                else {
-                    formeL.setX(formeL.getX());
-                }
-                if (formeL.getX2() > this.ligne/2) {
-                    formeL.setX2(formeL.getX2());
-                }
-                else {
-                    formeL.setX2(formeL.getX2());
-                }
-            }
-            else if (forme instanceof Texte){
-                Texte formeT = (Texte) forme;
-                formeT.coorSet( , );
-            }
-            else {
-                forme.setX(forme.getX());
-            }
-        }
-    }
+//    public void renverser(){
+//        for(int i = 0; i < listeForme.size(); i++) {
+//            Forme forme = listeForme.get(i);
+//            if (forme instanceof Ligne){
+//                Ligne formeL = (Ligne) forme;
+//                if (formeL.getX() > this.ligne/2) {
+//                    formeL.setX(formeL.getX());
+//                }
+//                else {
+//                    formeL.setX(formeL.getX());
+//                }
+//                if (formeL.getX2() > this.ligne/2) {
+//                    formeL.setX2(formeL.getX2());
+//                }
+//                else {
+//                    formeL.setX2(formeL.getX2());
+//                }
+//            }
+//            else if (forme instanceof Texte){
+//                Texte formeT = (Texte) forme;
+//                formeT.coorSet( , );
+//            }
+//            else {
+//                forme.setX(forme.getX());
+//            }
+//        }
+//    }
 
     public void afficherCanevas(){
         for(int i = 0; i < canevas.length; i++) {

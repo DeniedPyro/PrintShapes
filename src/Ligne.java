@@ -66,4 +66,10 @@ public class Ligne extends Forme {
         }
         
     }
+
+    @Override
+    public void renverser(Surface sur) {
+        this.y = sur.getLigne()-1-this.y;
+        this.y2 = sur.getLigne()-1-this.y2;
+    }
 }

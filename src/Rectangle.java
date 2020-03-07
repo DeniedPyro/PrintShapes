@@ -17,4 +17,9 @@ public class Rectangle extends Forme {
             }
         }
     }
+
+    public void renverser(Surface sur){
+        this.y = sur.getLigne()-this.y-this.hauteur;
+    }
+
 }

@@ -30,4 +30,9 @@ public class Texte extends Forme{
             lettreAct.dessiner(sur);
         }
     }
+
+    @Override
+    public void renverser(Surface surface) {
+
+    }
 }
