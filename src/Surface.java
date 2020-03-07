@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import static java.lang.Math.random;
+import java.util.Random;
 public class Surface {
     private int ligne;
     private int colonne;
@@ -58,8 +58,11 @@ public class Surface {
     public void brasser(){
         for(int i = 0; i < listeForme.size(); i++) {
             Forme forme = listeForme.get(i);
-            int randX = (int)(Math.random()*3 - 1);
-            int randY = (int)(Math.random()*3 - 1);                
+            Random ran1 = new Random();
+            Random ran2 = new Random();
+
+            int randX = ran1.nextInt(3) - 1;
+            int randY = ran2.nextInt(3) - 1;
             if (forme instanceof Ligne){
                 Ligne formeL = (Ligne) forme;
                 formeL.setX(formeL.getX() + randX);
