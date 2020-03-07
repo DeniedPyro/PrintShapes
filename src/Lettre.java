@@ -25,6 +25,10 @@ public class Lettre extends Forme{
 
     @Override
     public void renverser(Surface surface) {
-
+        for(int i = 0; i < this.carImage.length/2; i++){
+            byte tempCar = this.carImage[i];
+            this.carImage[i] = this.carImage[this.carImage.length-1-i];
+            this.carImage[this.carImage.length-1-i] = tempCar;
+        }
     }
 }
