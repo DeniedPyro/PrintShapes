@@ -148,7 +148,7 @@ public class Main {
         if(instructions[0].equals("car") && instructions.length  == 2){
             return true;
         }
-        if(instructions[0].equals("ajouter")){
+        if(instructions[0].equals("ajouter") &&  instructions.length > 1){
             return isAjouterInstValid(sliceArray(instructions,1 , instructions.length));
         }
         if(instructions[0].equals("dessiner") && instructions.length  == 1){
@@ -227,11 +227,12 @@ public class Main {
                         car =  instArgs[1].charAt(0);
                     }
                     else {
-                        int success = exec(sur,car,instArgs);
-                        if (success < 0){
-                            System.out.println("l'instruction car doit être executé avant de crée une forme");
-                            //System.out.println("character is: " + car +" <--");
-                        }
+                         exec(sur,car,instArgs);
+//                        int success =
+//                        if (success < 0){
+//                            System.out.println("l'instruction car doit être executé avant de crée une forme");
+//                            //System.out.println("character is: " + car +" <--");
+//                        }
                     }
                 }
                 else{
