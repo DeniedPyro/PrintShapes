@@ -17,6 +17,8 @@ public class Main {
 
     public static void dessiner(Surface sur){
         sur.resetCanevas();
+        sur.dessiner();
+        sur.afficherCanevas();
     }
 
     public static void ajouter(Surface sur , char car ,String [] arg){
@@ -32,21 +34,28 @@ public class Main {
         if (arg[0].equals("carre")){
             int cote = Integer.parseInt(arg[3]);
             Carre c = new Carre(car,x,y,cote);
+            sur.ajouter(c);
         }
         if (arg[0].equals("cercle")){
             int rayon = Integer.parseInt(arg[3]);
             Cercle c = new Cercle(car,x,y,rayon);
+            sur.ajouter(c);
         }
         if (arg[0].equals("lettre")){
-            Lettre c = new Lettre(x,y,car);
+            char lettre = arg[3].charAt(0);
+            Lettre c = new Lettre(car,x,y,lettre);
+            sur.ajouter(c);
         }
         if (arg[0].equals("texte")){
-            Lettre c = new Lettre(x,y,car);
+            String chaine = arg[3];
+            Texte c = new Texte(car,x,y,chaine);
+            sur.ajouter(c);
         }
         if (arg[0].equals("ligne")){
             int y1 = Integer.parseInt(arg[3]);
             int y2 = Integer.parseInt(arg[4]);
             Ligne l = new Ligne(car,x,y,y1,y2);
+            sur.ajouter(l);
         }
     }
 
