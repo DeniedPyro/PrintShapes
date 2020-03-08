@@ -285,7 +285,7 @@ public class Main {
         Boolean init = false;
         char car = '#';
         Surface sur = null;
-        do {
+        while (scan.hasNext()){
             instruction = scan.nextLine();
             if(instruction.equals("fin")) {
                 break;
@@ -319,7 +319,7 @@ public class Main {
             else{
                 System.out.println("L'instruction n'est pas valide ou conforme");
             }
-        } while (scan.hasNext());
+        }
 
     }
 }
