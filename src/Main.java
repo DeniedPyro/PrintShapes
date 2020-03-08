@@ -187,13 +187,7 @@ public class Main {
 
     public static int exec(Surface sur,char car, String [] arg){
         if (arg[0].equals("ajouter")){
-            if (car != ' '){
-                ajouter(sur, car, sliceArray(arg, 1, arg.length));
-                return 1;
-            }
-            else{
-                return -1;
-            }
+            ajouter(sur, car, sliceArray(arg, 1, arg.length));
         }
         if (arg[0].equals("dessiner")){
                 dessiner(sur);
@@ -212,7 +206,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String instruction;
         Boolean init = false;
-        char car = ' ';
+        char car = '#';
         Surface sur = null;
         do {
             instruction = scan.nextLine();
@@ -237,9 +231,6 @@ public class Main {
                         if (success < 0){
                             System.out.println("l'instruction car doit être executé avant de crée une forme");
                             //System.out.println("character is: " + car +" <--");
-                        }
-                        else if (success == 1){
-                            car = ' ';
                         }
                     }
                 }
