@@ -58,20 +58,20 @@ public class Main {
         }
     }
 
-    public static String[] sliceArray(String[] arr, int start, int end) {
+    public static String[] sliceArray(String[] array, int start, int end) {
         String[] slice = new String[end - start];
         for (int i = 0; i < slice.length; i++) {
-            slice[i] = arr[start + i];
+            slice[i] = array[start + i];
         }
         return slice;
     }
 
     public static boolean isNumber(String str) {
-        if (str == null || str.length() == 0) {
+        if ( str.length() == 0 ||  str == null) {
             return false;
         }
-        for (char c : str.toCharArray()) {
-            if (!Character.isDigit(c)) {
+        for(int i =0; i < str.length(); i++){
+            if (!Character.isDigit(str.charAt(i))) {
                 return false;
             }
         }
