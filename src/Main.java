@@ -200,26 +200,25 @@ public class Main {
             if (car != ' '){
                 ajouter(sur, car, sliceArray(arg, 1, arg.length));
                 car = ' ';
-            }
-            else sucess = false;
+            }else sucess = false;
         }
 
         if (arg[0].equals("dessiner")){
             if (sur != null ) {
                 dessiner(sur);
-            }
+            }else sucess = false;
         }
 
         if (arg[0].equals("brasser")){
             if (sur != null ) {
                 brasser(sur);
-            }
+            }else sucess = false;
         }
 
         if (arg[0].equals("renverser")){
             if (sur != null ) {
                 renverser(sur);
-            }
+            }else sucess = false;
         }
 
         return sucess;
