@@ -9,18 +9,38 @@ public class Ligne extends Forme {
         this.y2 = y2;
         this.caractere = caractere;
     }
+    
+    /** 
+     * @param x2
+     */
     public void setX2(int x2){
         this.x2 = x2;
     }
+    
+    /** 
+     * @param y2
+     */
     public void setY2(int y2){
         this.y2 = y2;
     }
+    
+    /** 
+     * @return int
+     */
     public int getX2(){
         return this.x2;
     }
+    
+    /** 
+     * @return int
+     */
     public int getY2(){
         return this.y2;
     }
+    
+    /** 
+     * @param sur
+     */
     public void dessiner(Surface sur) {
         int deltaX =(this.x2 - this.x);
         int deltaY =(this.y2 - this.y);
@@ -67,6 +87,10 @@ public class Ligne extends Forme {
         
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void renverser(Surface sur) {
         this.y = sur.getLigne()-this.y;
         this.y2 = sur.getLigne()-this.y2;

@@ -10,6 +10,10 @@ public class Rectangle extends Forme {
         this.y = y;
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void dessiner(Surface sur) {
         for (int col = this.x ; col < this.largeur + this.x ; col++){
             for (int lin = this.y ; lin < this.hauteur + this.y ; lin++){
@@ -18,6 +22,10 @@ public class Rectangle extends Forme {
         }
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void renverser(Surface sur){
         this.y = sur.getLigne()-this.y-this.hauteur;
     }

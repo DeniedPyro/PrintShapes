@@ -2,24 +2,48 @@ import java.util.Scanner;
 
 public class Main {
 
+    
+    /** 
+     * @param largeur
+     * @param hauteur
+     * @return Surface
+     */
     public static Surface init(int largeur, int hauteur){
         return new Surface(hauteur,largeur);
     }
 
+    
+    /** 
+     * @param sur
+     */
     public static void brasser(Surface sur){
         sur.brasser();
     }
 
+    
+    /** 
+     * @param sur
+     */
     public static void renverser(Surface sur){
         sur.renverser();
     }
 
+    
+    /** 
+     * @param sur
+     */
     public static void dessiner(Surface sur){
         sur.resetCanevas();
         sur.dessiner();
         sur.afficherCanevas();
     }
 
+    
+    /** 
+     * @param sur
+     * @param car
+     * @param arg
+     */
     public static void ajouter(Surface sur , char car ,String [] arg){
         int x = Integer.parseInt(arg[1]);
         int y = Integer.parseInt(arg[2]);
@@ -58,6 +82,13 @@ public class Main {
         }
     }
 
+    
+    /** 
+     * @param array
+     * @param start
+     * @param end
+     * @return String[]
+     */
     public static String[] sliceArray(String[] array, int start, int end) {
         String[] slice = new String[end - start];
         for (int i = 0; i < slice.length; i++) {
@@ -66,6 +97,11 @@ public class Main {
         return slice;
     }
 
+    
+    /** 
+     * @param str
+     * @return boolean
+     */
     public static boolean isNumber(String str) {
         if ( str.length() == 0 ||  str == null) {
             return false;
@@ -78,6 +114,11 @@ public class Main {
         return true;
     }
 
+    
+    /** 
+     * @param attr
+     * @return boolean
+     */
     public static boolean isAttrAllNum(String[] attr){
         for (int i = 0; i < attr.length; i++) {
             if (!isNumber(attr[i])) {
@@ -87,6 +128,11 @@ public class Main {
         return true;
     }
 
+    
+    /** 
+     * @param arg
+     * @return boolean
+     */
     public static boolean isFormeArgsValid(String [] arg){
         boolean valid = false;
         if (arg[0].equals("rectangle") && arg.length == 5){
@@ -114,6 +160,11 @@ public class Main {
         return valid;
     }
 
+    
+    /** 
+     * @param instructions
+     * @return boolean
+     */
     public static boolean isAjouterInstValid(String [] instructions){
         String listeForme [] = {"rectangle","carre","ligne","cercle","lettre","texte"};
         boolean ajouterArgValid = false;
@@ -131,6 +182,11 @@ public class Main {
         }
     }
 
+    
+    /** 
+     * @param instructions
+     * @return boolean
+     */
     public static boolean isInitInstValid(String [] instructions){
         if (isNumber(instructions[1]) && isNumber(instructions[2])){
             return true;
@@ -140,6 +196,11 @@ public class Main {
         }
     }
 
+    
+    /** 
+     * @param []instructions
+     * @return boolean
+     */
     public  static  boolean isInstrParamsValid (String []instructions){
         //System.out.println(instructions[0]);
         if(instructions[0].equals("init") && instructions.length  == 3){
@@ -165,6 +226,11 @@ public class Main {
         }
     }
 
+    
+    /** 
+     * @param instructions
+     * @return boolean
+     */
     public static boolean isInstructionValid(String [] instructions ){
         String instructionList [] = {"init","car","ajouter","dessiner","brasser","renverser"};
         boolean isInst = false;
@@ -185,6 +251,13 @@ public class Main {
         }
     }
 
+    
+    /** 
+     * @param sur
+     * @param car
+     * @param arg
+     * @return int
+     */
     public static int exec(Surface sur,char car, String [] arg){
         if (arg[0].equals("ajouter")){
             ajouter(sur, car, sliceArray(arg, 1, arg.length));
@@ -202,6 +275,10 @@ public class Main {
         return 0;
     }
 
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String instruction;

@@ -19,10 +19,18 @@ public class Surface {
         }
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getColonne() {
         return this.colonne;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getLigne() {
         return this.ligne;
     }
@@ -48,16 +56,30 @@ public class Surface {
     }
 
 
+    
+    /** 
+     * @param car
+     * @param i
+     * @param j
+     */
     public void setPixel(char car, int i ,int j) {
         if (j>=0 && j < this.getColonne() && i >=0 && i < this.getLigne()){
             this.canevas[i][j] = car;
         }
     }
 
+    
+    /** 
+     * @return char[][]
+     */
     public char[][] getCanevas(){
         return this.canevas;
     }
 
+    
+    /** 
+     * @param enforme
+     */
     public void ajouter (Forme enforme){
         listeForme.add(enforme);
     }

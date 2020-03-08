@@ -9,12 +9,22 @@ public class Cercle extends Forme {
         this.y = y;
     }
 
+    
+    /** 
+     * @param sur
+     * @param x
+     * @param y
+     */
     public void ajouterPixel(Surface sur , int x , int y){
         if(x >=0 && x < sur.getColonne() && y >= 0 && y < sur.getLigne()){
             sur.setPixel(this.caractere,y,x);
         }
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void dessiner(Surface sur) {
         int x = 0;
         int y = this.rayon;
@@ -38,6 +48,10 @@ public class Cercle extends Forme {
         }
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void renverser(Surface sur){
         this.y = sur.getLigne()-(this.rayon/2)-this.y;
     }

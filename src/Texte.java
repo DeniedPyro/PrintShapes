@@ -12,6 +12,11 @@ public class Texte extends Forme{
             this.tabLettres.add(lettre);
         }        
     }
+    
+    /** 
+     * @param x
+     * @param y
+     */
     public void coorSet(int x, int y){
         for(int i = 0; i < this.tabLettres.size(); i++) {
             Lettre l = this.tabLettres.get(i);
@@ -20,10 +25,18 @@ public class Texte extends Forme{
         }
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getSize(){
         return this.tabLettres.size();
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void dessiner(Surface sur) {
         for (int i = 0; i < this.tabLettres.size(); i++){
             Lettre lettreAct = this.tabLettres.get(i);
@@ -31,6 +44,10 @@ public class Texte extends Forme{
         }
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void renverser(Surface sur) {
         for(int i = 0; i < this.tabLettres.size(); i++) {
             Lettre l = this.tabLettres.get(i);

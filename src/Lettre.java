@@ -7,6 +7,10 @@ public class Lettre extends Forme{
         this.y = y;
         this.carImage = Police8x12.getImage(lettre);
     }
+    
+    /** 
+     * @param sur
+     */
     public void dessiner(Surface sur) {
         byte[] table =this.carImage;
         for(int j = 0; j < 12; j++) {
@@ -21,6 +25,10 @@ public class Lettre extends Forme{
         }
     }
 
+    
+    /** 
+     * @param sur
+     */
     public void renverser(Surface sur) {
         for(int i = 0; i < this.carImage.length/2; i++){
             byte tempCar = this.carImage[i];
