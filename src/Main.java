@@ -115,7 +115,7 @@ public class Main {
     }
 
     public static boolean isAjouterInstValid(String [] instructions){
-        String listeForme [] = {"rectangle","carre","ligne","cercle","lettre","text"};
+        String listeForme [] = {"rectangle","carre","ligne","cercle","lettre","texte"};
         boolean ajouterArgValid = false;
         for (int i = 0; i < listeForme.length; i++) {
             if (instructions[0].equals(listeForme[i])) {
