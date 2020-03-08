@@ -3,12 +3,11 @@ public class Texte extends Forme{
     private ArrayList<Lettre> tabLettres;
 
     public Texte(char caractere, int x, int y, String chaine){
-        this.caractere = caractere;
         this.x = x;
         this.y = y;
         this.tabLettres = new ArrayList<Lettre>();
         for(int i = 0; i < chaine.length(); i++){
-            Lettre lettre = new Lettre(chaine.charAt(i), 8*i + x, y, caractere);
+            Lettre lettre = new Lettre(8*i + x, y, chaine.charAt(i));
             this.tabLettres.add(lettre);
         }        
     }

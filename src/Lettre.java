@@ -1,9 +1,8 @@
 public class Lettre extends Forme{
     private char lettre;
     private byte[] carImage;
-    public Lettre (char caractere, int x, int y, char lettre){
+    public Lettre (int x, int y, char caractere){
         this.caractere = caractere;
-        this.lettre = lettre;
         this.x = x;
         this.y = y;
         this.carImage = Police8x12.getImage(lettre);
