@@ -185,12 +185,13 @@ public class Main {
         }
     }
 
-    public static boolean exec(Surface sur,char car, String [] arg){
+    public static boolean exec(boolean init, Surface sur,char car, String [] arg){
         boolean sucess = true;
         if (arg[0].equals("init")){
             int largeur = Integer.parseInt(arg[1]);
             int hauteur = Integer.parseInt(arg[2]);
             init(sur,largeur,hauteur);
+            init=true;
         }
         if (arg[0].equals("car")){
             car =  arg[1].charAt(0);
@@ -204,19 +205,19 @@ public class Main {
         }
 
         if (arg[0].equals("dessiner")){
-            if (sur != null ) {
+            if (init) {
                 dessiner(sur);
             }else sucess = false;
         }
 
         if (arg[0].equals("brasser")){
-            if (sur != null ) {
+            if (init ) {
                 brasser(sur);
             }else sucess = false;
         }
 
         if (arg[0].equals("renverser")){
-            if (sur != null ) {
+            if (init) {
                 renverser(sur);
             }else sucess = false;
         }
@@ -240,7 +241,8 @@ public class Main {
             String[] instArgs = instruction.split(" ");
 
             if (isInstructionValid(instArgs)){
-                boolean sucess = exec(sur,car,instArgs);
+                boolean sucess = exec(init,sur,car,instArgs);
+
 
                 if (!sucess){
                     System.out.println("Erreur dans l'execution");
