@@ -1,5 +1,265 @@
+import java.util.Scanner;
+
 public class Main {
+    static int errorCode;
+
+    public static void init(Surface sur , int largeur, int hauteur){
+        sur = new Surface(hauteur,largeur);
+    }
+
+    public static void brasser(Surface sur){
+        sur.brasser();
+    }
+
+    public static void renverser(Surface sur){
+        sur.renverser();
+    }
+
+    public static void dessiner(Surface sur){
+        sur.resetCanevas();
+    }
+
+    public static void ajouter(Surface sur , char car ,String [] arg){
+        int x = Integer.parseInt(arg[1]);
+        int y = Integer.parseInt(arg[2]);
+
+        if (arg[0].equals("rectangle")){
+            int largeur = Integer.parseInt(arg[3]);
+            int hauteur = Integer.parseInt(arg[4]);
+            Rectangle r = new Rectangle(car,x,y,largeur,hauteur);
+            sur.ajouter(r);
+        }
+        if (arg[0].equals("carre")){
+            int cote = Integer.parseInt(arg[3]);
+            Carre c = new Carre(car,x,y,cote);
+        }
+        if (arg[0].equals("cercle")){
+            int rayon = Integer.parseInt(arg[3]);
+            Cercle c = new Cercle(car,x,y,rayon);
+        }
+        if (arg[0].equals("lettre")){
+            Lettre c = new Lettre(x,y,car);
+        }
+        if (arg[0].equals("texte")){
+            Lettre c = new Lettre(x,y,car);
+        }
+        if (arg[0].equals("ligne")){
+            int y1 = Integer.parseInt(arg[3]);
+            int y2 = Integer.parseInt(arg[4]);
+            Ligne l = new Ligne(car,x,y,y1,y2);
+        }
+    }
+
+    public static String[] sliceArray(String[] arr, int start, int end) {
+        String[] slice = new String[end - start];
+        for (int i = 0; i < slice.length; i++) {
+            slice[i] = arr[start + i];
+        }
+        return slice;
+    }
+
+    public static boolean isNumber(String str) {
+        if (str == null || str.length() == 0) {
+            return false;
+        }
+        for (char c : str.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isAttrAllNum(String[] attr){
+        for (int i = 0; i < attr.length; i++) {
+            if (!isNumber(attr[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isFormeArgsValid(String [] arg){
+        boolean valid = false;
+        if (arg[0].equals("rectangle") && arg.length == 5){
+            return isAttrAllNum(sliceArray(arg,1,arg.length));
+        }
+        if (arg[0].equals("carre") && arg.length == 4){
+            return isAttrAllNum(sliceArray(arg,1,arg.length));
+        }
+        if (arg[0].equals("cercle") && arg.length == 4){
+            System.out.println("cercle cercle");
+            return isAttrAllNum(sliceArray(arg,1,arg.length));
+        }
+        if (arg[0].equals("lettre") && arg.length == 4){
+            if (isNumber(arg[1]) && isNumber(arg[2]) && !isNumber(arg[3]) & arg[3].length() == 1){
+                valid = true;
+            }
+        }
+        if (arg[0].equals("texte") && arg.length == 4){
+            if (isNumber(arg[1]) && isNumber(arg[2]) && !isNumber(arg[3])){
+                valid = true;
+            }
+        }
+        if (arg[0].equals("ligne") && arg.length == 5){
+            return isAttrAllNum(sliceArray(arg,1,arg.length));
+        }
+        return valid;
+    }
+
+    public static boolean isAjouterInstValid(String [] instructions){
+        String listeForme [] = {"rectangle","carre","ligne","cercle","lettre","text"};
+        boolean ajouterArgValid = false;
+        for (int i = 0; i < listeForme.length; i++) {
+            if (instructions[0].equals(listeForme[i])) {
+                ajouterArgValid = true;
+                break;
+            }
+        }
+        if (!ajouterArgValid){
+            return false;
+        }
+        else {
+            System.out.println("on a une forme");
+            return isFormeArgsValid(instructions);
+        }
+
+    }
+
+    public static boolean isInitInstValid(String [] instructions){
+        if (isNumber(instructions[1]) && isNumber(instructions[2])){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public  static  boolean isInstrParamsValid (String []instructions){
+        System.out.println(instructions[0]);
+        if(instructions[0].equals("init")){
+            return isInitInstValid(instructions);
+        }
+        if(instructions[0].equals("car") && instructions.length  == 2){
+            return true;
+        }
+        if(instructions[0].equals("ajouter")){
+            System.out.println("YES ON AJOUTE");
+            return isAjouterInstValid(sliceArray(instructions,1 , instructions.length));
+        }
+        if(instructions[0].equals("dessiner") && instructions.length  == 1){
+            return true;
+        }
+        if(instructions[0].equals("renverser") && instructions.length  == 1){
+            return true;
+        }
+        if(instructions[0].equals("brasser") && instructions.length  == 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public static boolean isInstructionValid(String [] instructions ){
+        String instructionList [] = {"init","car","ajouter","dessiner","brasser","renverser"};
+        boolean isInst = false;
+        if(instructions.length < 0){
+            errorCode = 0;
+            return false;
+        }
+
+        for (int i = 0; i < instructionList.length; i++) {
+            if (instructions[0].equals(instructionList[i])) {
+                System.out.println("yay");
+                isInst = true;
+                break;
+            }
+        }
+        if (!isInst){
+            return false;
+        }
+        else {
+            System.out.println("lets go");
+            return isInstrParamsValid(instructions);
+        }
+    }
+
+    public static boolean exec(Surface sur,char car, String [] arg){
+        boolean sucess = true;
+        if (arg[0].equals("init")){
+            int largeur = Integer.parseInt(arg[1]);
+            int hauteur = Integer.parseInt(arg[2]);
+            init(sur,largeur,hauteur);
+        }
+        if (arg[0].equals("car")){
+            car =  arg[1].charAt(0);
+        }
+
+        if (arg[0].equals("ajouter")){
+            if (car != ' '){
+                ajouter(sur, car, sliceArray(arg, 1, arg.length));
+                car = ' ';
+            }
+            else sucess = false;
+        }
+
+        if (arg[0].equals("dessiner")){
+            if (sur != null ) {
+                dessiner(sur);
+            }
+        }
+
+        if (arg[0].equals("brasser")){
+            if (sur != null ) {
+                brasser(sur);
+            }
+        }
+
+        if (arg[0].equals("renverser")){
+            if (sur != null ) {
+                renverser(sur);
+            }
+        }
+
+        return sucess;
+
+    }
+
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String instruction;
+        Boolean init = false;
+        char car = ' ';
+        Surface sur = null;
+        do {
+            instruction = scan.nextLine();
+            if(instruction.equals("fin")) {
+                break;
+            }
+
+            String[] instArgs = instruction.split(" ");
+
+            if (isInstructionValid(instArgs)){
+                boolean sucess = exec(sur,car,instArgs);
+
+                if (!sucess){
+                    System.out.println("Erreur dans l'execution");
+                }
+            }
+            else{
+                System.out.println("L'instruction n'est pas valide");
+            }
+        } while (scan.hasNext());
+
+
+
+
+
+
+
+
+
         /* Surface windows = new Surface(10,10);
         Ligne l = new Ligne(1,1,7,5,'#'); */
         /* Rectangle r = new Rectangle(10,10,'.',0,0);
