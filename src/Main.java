@@ -198,7 +198,7 @@ public class Main {
 
     
     /** 
-     * @param []instructions
+     * @param '[]'instructions
      * @return boolean
      */
     public  static  boolean isInstrParamsValid (String []instructions){
