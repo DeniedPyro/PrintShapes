@@ -76,7 +76,7 @@ pour obternir un dessin renverser.
 Cette méthode à été ajouter pour permetttre de renverser la ligne en tenant compte du positionnement et des dimension de la surface
 
 
-- Classe Lettre, méthode renverser(Surface sur)
+- Classe Texte, méthode renverser(Surface sur)
 
 Cette méthode à été ajouter pour permetttre de renverser la texte en renversant individuellement chacune des lettres qui forme le texte
 
