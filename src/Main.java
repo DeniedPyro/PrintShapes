@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     
-    /** 
+    /** Initialise la surface
      * @param largeur
      * @param hauteur
      * @return Surface
@@ -13,7 +13,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Brasse le contenu de la surface
      * @param sur
      */
     public static void brasser(Surface sur){
@@ -21,7 +21,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Renverse le contenu de la surface
      * @param sur
      */
     public static void renverser(Surface sur){
@@ -29,7 +29,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Dessine sur la surface et affiche le contenu
      * @param sur
      */
     public static void dessiner(Surface sur){
@@ -39,7 +39,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Ajoute sur la surface la forme voulu
      * @param sur
      * @param car
      * @param arg
@@ -83,7 +83,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Cree un sous tableau a partir d'un tableau original
      * @param array
      * @param start
      * @param end
@@ -98,7 +98,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Verifie si le nombre contenue dans le string est un nombre
      * @param str
      * @return boolean
      */
@@ -115,7 +115,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Verifie si les attributs sont tous des chiffres
      * @param attr
      * @return boolean
      */
@@ -129,7 +129,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Verifie si les attributs de la forme a cree sont conforme
      * @param arg
      * @return boolean
      */
@@ -161,7 +161,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Verifie si la commande ajouter est valide
      * @param instructions
      * @return boolean
      */
@@ -183,7 +183,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Verifie si la commande init est valide
      * @param instructions
      * @return boolean
      */
@@ -197,8 +197,8 @@ public class Main {
     }
 
     
-    /** 
-     * @param '[]'instructions
+    /** Verifie selon la commande si les parametres sont valide et conforme
+     * @param instructions
      * @return boolean
      */
     public  static  boolean isInstrParamsValid (String []instructions){
@@ -227,7 +227,7 @@ public class Main {
     }
 
     
-    /** 
+    /** Verifie la commande est valide
      * @param instructions
      * @return boolean
      */
@@ -252,13 +252,12 @@ public class Main {
     }
 
     
-    /** 
+    /** Execution des commandes ajouter, dessiner, brasser et renverser
      * @param sur
      * @param car
      * @param arg
-     * @return int
      */
-    public static int exec(Surface sur,char car, String [] arg){
+    public static void exec(Surface sur,char car, String [] arg){
         if (arg[0].equals("ajouter")){
             ajouter(sur, car, sliceArray(arg, 1, arg.length));
         }
@@ -272,7 +271,6 @@ public class Main {
         if (arg[0].equals("renverser")){
                 renverser(sur);
         }
-        return 0;
     }
 
     
