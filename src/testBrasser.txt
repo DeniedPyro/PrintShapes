@@ -1,0 +1,52 @@
+init 10 10
+ajouter rectangle 0 0 10 10
+car .
+ajouter ligne 1 1 7 5
+dessiner
+brasser
+dessiner
+brasser
+dessiner
+init 10 10
+ajouter rectangle 0 0 10 10
+car .
+ajouter cercle 3 3 2
+dessiner
+brasser
+dessiner
+brasser
+dessiner
+init 8 12
+car .
+ajouter rectangle 0 0 8 12
+car #
+ajouter lettre 0 0 V
+dessiner
+brasser
+dessiner
+brasser
+dessiner
+init 80 12
+car .
+ajouter rectangle 0 0 80 12
+car #
+ajouter texte 0 0 BruhMoment
+dessiner
+brasser
+dessiner
+brasser
+dessiner
+init 20 20
+ajouter carre 0 0 10
+dessiner
+brasser
+dessiner
+brasser
+dessiner
+init 20 20
+ajouter rectangle 0 0 10 10
+dessiner
+brasser
+dessiner
+brasser
+dessiner

@@ -1,0 +1,9 @@
+init 10 10
+car .
+ajouter rectangle 0 0 10 10
+dessiner
+brasser
+brasser
+dessiner
+renverser
+dessiner

@@ -1,0 +1,6 @@
+ajouter rectangle 0 0 10 10
+init 10 10
+ajouter rectangle 0 0 10 10
+dessiner
+init 10 10
+dessiner
