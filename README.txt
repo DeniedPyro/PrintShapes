@@ -27,7 +27,7 @@ Cette méthode à été ajouter pour permettre de mettre dans le canevas les pix
 Cette méthode a été ajouter simplement pour permettre d'afficher le contenu du canevas
 
 
-Classe Forme, méthode abstraite renverse
+- Classe Forme, méthode abstraite renverser
 
 Cette méthode abstraite permet à chacune des classe qui le concept de étende forme de pouvoir définir la procédure permettant
 de renverser une forme.
@@ -51,17 +51,12 @@ Cette méthode à été ajouter pour permetttre de renverser le cercle en tenant
 Cette méthode à été ajouter pour permetttre de renverser le rectangle en tenant compte du positionnement et des dimension de la surface
 
 
-- Classe Ligne, méthode renverser(Surface sur)
-
-Cette méthode à été ajouter pour permetttre de renverser la ligne en tenant compte du positionnement et des dimension de la surface
-
-
--  Classe Lettre attribut char lettre
+- Classe Lettre attribut char lettre
 
 Cette attribut à été enlever, car nous utilisons maintenant la paramètre passant la lettre pour créer
 directement le tableau d'octet contenant l'information nécessaire pour construire le caractère.
 
-- Class Lettre attribut byte [] carImage
+- Class Lettre attribut byte [] lettreEncode
 
 Cette attribut sert à contenir l'information par rapport à la facon de dessiner une lettre.
 
@@ -81,8 +76,8 @@ Cette méthode à été ajouter pour permetttre de renverser la ligne en tenant 
 Cette méthode à été ajouter pour permetttre de renverser la texte en renversant individuellement chacune des lettres qui forme le texte
 
 
-Pour la detection des entrées nous séparer le concept en deux étapes:
-1- la detection de la validité de l'entrée
+Pour la detection des entrées nous avons séparé le concept en deux étapes:
+1. la detection de la validité de l'entrée
 2. l'execution de l'entrée
 
 Pour la detection de la validité de l'entrée,nous nous sommes intéressé dabord à l'existence de la commande.
@@ -93,7 +88,7 @@ Ensuite, il ne restait qu'à faire l'exécution en étant s'assurant que la surf
 Nous avons pris le temps d'écrire plusieurs fichiers de test qui cible des problèmes que nous aurions pu rencontrer. Comme la mauvaise initialisation de la surface, le dessins des differentes formes mal executer,
 le changements de caractère pour le dessin des formes, la positionement dans le canevas,un mauvais renversement de la forme etc...
 
-Ce Travail pratique fut une bon exercise pour exercer les concepts d'orienter objet. Nous avions quelques fonctions manquantse au niveau de notre design, mais sinon le squelette de départ
+Ce Travail pratique fut une bon exercise pour exercer les concepts d'orienter objet. Nous avions quelques fonctions manquantes au niveau de notre design, mais sinon le squelette de départ
 à été une bonne inspiration pour la complétion du tp.
 
  Merci!
