@@ -90,6 +90,9 @@ ensuite nous avons découper les arguments de la commande pour voir si le nombre
 
 Ensuite, il ne restait qu'à faire l'exécution en étant s'assurant que la surface ait été initialisé avant de pour executer.
 
+Nous avons pris le temps d'écrire plusieurs fichiers de test qui cible des problèmes que nous aurions pu rencontrer. Comme la mauvaise initialisation de la surface, le dessins des differentes formes mal executer,
+le changements de caractère pour le dessin des formes, la positionement dans le canevas,un mauvais renversement de la forme etc...
+
 Ce Travail pratique fut une bon exercise pour exercer les concepts d'orienter objet. Nous avions quelques fonctions manquantse au niveau de notre design, mais sinon le squelette de départ
 à été une bonne inspiration pour la complétion du tp.
 
