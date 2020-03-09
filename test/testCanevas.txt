@@ -4,3 +4,6 @@ dessiner
 car .
 ajouter rectangle 10 10 10 10
 dessiner
+init 10 10
+ajouter cercle 2 2 4
+dessiner

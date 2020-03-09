@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Tp1 {
 
     
     /** Initialise la surface
