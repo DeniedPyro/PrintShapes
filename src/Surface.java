@@ -2,10 +2,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Surface {
+
     private int ligne;
     private int colonne;
     private ArrayList<Forme> listeForme;
-    private char [][] canevas ;
+    private char [][] canevas;
 
     public Surface(int ligne, int colonne){
         this.ligne = ligne;
@@ -20,7 +21,7 @@ public class Surface {
     }
 
     
-    /** 
+    /** Getter de colonne
      * @return int
      */
     public int getColonne() {
@@ -28,13 +29,17 @@ public class Surface {
     }
 
     
-    /** 
+    /** Getter de ligne
      * @return int
      */
     public int getLigne() {
         return this.ligne;
     }
 
+
+    /**
+     * Permer de rendre la canevas vide. 
+     */
     public void resetCanevas(){
         for(int i = 0; i < this.ligne; i++) {
             for(int j = 0; j < this.colonne; j++) {
@@ -43,21 +48,30 @@ public class Surface {
         }
     }
 
+
+    /** Permet de dessiner chaque forme se trouvant
+     * dans notre liste de forme sur la surface
+     */
     public void dessiner(){
         for (int i = 0; i < listeForme.size(); i++) {
             listeForme.get(i).dessiner(this);
         }
     }
 
+
+    /** Permet de renverser chaque forme se trouvant 
+     * dans la liste de forme
+     */
     public void renverser(){
         for (int i = 0; i < listeForme.size(); i++) {
             listeForme.get(i).renverser(this);
         }
     }
 
-
-    
-    /** 
+   
+    /**  Permet de voir si les coordonnées ne dépassent
+     * pas la taille de la surface puis de 
+     * setter chaque pixel par un caractère
      * @param car
      * @param i
      * @param j
@@ -69,7 +83,7 @@ public class Surface {
     }
 
     
-    /** 
+    /** Getter du canevas.
      * @return char[][]
      */
     public char[][] getCanevas(){
@@ -77,13 +91,22 @@ public class Surface {
     }
 
     
-    /** 
+    /**  Ajouter une forme à l'attribut listeForme.
      * @param enforme
      */
     public void ajouter (Forme enforme){
         listeForme.add(enforme);
     }
 
+
+    /** Crée 2 objets de classe Random puis 
+     * utiliser la methode nextInt de la classe 
+     * Random pour avoir une valeur entre 0 inclusivement 
+     * et 3 exclusivement puis de faire -1 pour avoir 
+     * une valeur entre -1 et 1 inclusivements
+     * puis ajouter ces 2 valeurs aux coordonées X et Y
+     * indépendamment
+     */
     public void brasser(){
         for(int i = 0; i < listeForme.size(); i++) {
             Forme forme = listeForme.get(i);
@@ -111,7 +134,9 @@ public class Surface {
     }
 
 
-
+    /**
+     * Permet de printer chaque pixel du canevas.
+     */
     public void afficherCanevas(){
         for(int i = 0; i < canevas.length; i++) {
             String resultat = "";

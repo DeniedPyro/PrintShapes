@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 public class Texte extends Forme{
+
     private ArrayList<Lettre> tabLettres;
 
     public Texte(char caractere, int x, int y, String chaine){
@@ -12,8 +13,10 @@ public class Texte extends Forme{
             this.tabLettres.add(lettre);
         }        
     }
+
     
     /** 
+     * Permet d'ajouter une valeur x et y a chaque coordonnées des lettres.
      * @param x
      * @param y
      */
@@ -27,6 +30,7 @@ public class Texte extends Forme{
 
     
     /** 
+     * Retourne le nombre de lettres.
      * @return int
      */
     public int getSize(){
@@ -35,6 +39,7 @@ public class Texte extends Forme{
 
     
     /** 
+     * Dessine chaque lettre.
      * @param sur
      */
     public void dessiner(Surface sur) {
@@ -46,6 +51,7 @@ public class Texte extends Forme{
 
     
     /** 
+     * Renverse chaque lettre.
      * @param sur
      */
     public void renverser(Surface sur) {

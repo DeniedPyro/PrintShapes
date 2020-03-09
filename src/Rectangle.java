@@ -1,8 +1,9 @@
 public class Rectangle extends Forme {
+
     int hauteur;
     int largeur;
 
-    public Rectangle(char caractere, int x ,int y, int largeur, int hauteur){
+    public Rectangle(char caractere, int x, int y, int largeur, int hauteur){
         this.hauteur = hauteur;
         this.largeur = largeur;
         this.caractere = caractere;
@@ -11,23 +12,22 @@ public class Rectangle extends Forme {
     }
 
     
-    /** 
+    /** Permet de dessiner le rectangle sur la surface
      * @param sur
      */
     public void dessiner(Surface sur) {
-        for (int col = this.x ; col < this.largeur + this.x ; col++){
-            for (int lin = this.y ; lin < this.hauteur + this.y ; lin++){
-                sur.setPixel(this.caractere,lin,col);
+        for (int col = this.x; col < this.largeur + this.x; col++){
+            for (int lin = this.y; lin < this.hauteur + this.y; lin++){
+                sur.setPixel(this.caractere, lin, col);
             }
         }
     }
 
     
-    /** 
+    /** Renverse le rectangle
      * @param sur
      */
     public void renverser(Surface sur){
-        this.y = sur.getLigne()-this.y-this.hauteur;
+        this.y = sur.getLigne() - this.y - this.hauteur;
     }
-
 }
