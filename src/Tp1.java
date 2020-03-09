@@ -1,3 +1,8 @@
+/**
+* Classe principale du TP1
+* @author Fahirah Diarra, p1104084
+* @author Hamdi Ghannem,  p1225567
+*/
 import java.util.Scanner;
 
 public class Tp1 {

@@ -4,13 +4,13 @@ abstract class Forme {
     int y;
     char caractere;
     
-    /** 
+    /** Dessine la forme
      * @param sur
      */
     public abstract void dessiner(Surface sur);
 
     
-    /** Setter de Caractere
+    /** Setter de caractere
      * @param car
      */
     public void setCaractere(char car){
@@ -18,7 +18,7 @@ abstract class Forme {
     }
     
 
-    /** Setter de X
+    /** Setter de x
      * @param x
      */
     public void setX(int x){
@@ -26,7 +26,7 @@ abstract class Forme {
     }
     
 
-    /** Setter de Y
+    /** Setter de y
      * @param y
      */
     public void setY(int y){
@@ -34,7 +34,7 @@ abstract class Forme {
     }
     
 
-    /** Getter de X
+    /** Getter de x
      * @return int
      */
     public int getX(){
@@ -42,7 +42,7 @@ abstract class Forme {
     }
     
 
-    /** Getter de Y
+    /** Getter de y
      * @return int
      */
     public int getY(){
@@ -50,7 +50,7 @@ abstract class Forme {
     }
 
 
-    /**
+    /** Renverse la forme
      * @param sur
      */
     public abstract void renverser(Surface sur);
